@@ -4,6 +4,7 @@ $(document).ready(function() {
     function toggleSidebar() {
         $(".button").toggleClass("active");
         $(".sidebar-item").toggleClass("active");
+        $(".settings-item").toggleClass("active");
         $("sidebar").toggleClass("nav-right visible-xs");
         $(".content").toggleClass("active");
 
@@ -22,6 +23,12 @@ $(document).ready(function() {
 
     $('.settings').click(function() {
         $('.sidebar-item:not(.settings)').toggleClass('active');
+        $('.settings-items').toggleClass('active');
+        if($(".settings-item").attr("id") === "visible") {
+          $(".settings-item").removeAttr("id");
+        } else {
+          $(".settings-item").attr("id", "visible");
+        }
     });
 
 });
@@ -34,7 +41,7 @@ window.addEventListener('load',function(){
     document.querySelector('body').classList.add("loaded")  
   });
   
-
+// TXT Effect 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   let interval = null;
